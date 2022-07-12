@@ -1,0 +1,9 @@
+.pen {
+    transition: 200ms ease-in-out;
+    opacity: .5;
+}
+
+.pen:hover {
+    opacity: 1;
+    cursor: pointer;
+}

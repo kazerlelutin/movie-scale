@@ -1,0 +1,21 @@
+.container {
+    position: fixed;
+    color: var(--color-alert);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: appear 300ms ease-in-out backwards;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    to {
+        opacity: 1;
+       
+    }
+}

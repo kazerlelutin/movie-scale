@@ -1,0 +1,61 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.mugContainer{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.mug {
+    position: relative;
+    width: 40px;
+    height: 45px;
+    border-radius: 0 0 15px 15px;
+    border-left: 5px solid var(--color-mug);
+    border-bottom: 5px solid var(--color-mug);
+    border-right: 5px solid var(--color-mug);
+    background: var(--color-round);
+}
+
+.coffee{
+    position: absolute;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    margin: 2px;
+    background: var(--color-coffee);
+    border-radius: 0 0 6px 6px;
+    animation: coffee 5s ease-in-out infinite alternate-reverse;
+}
+
+.mug:after{
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 7px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 5px solid var(--color-mug);
+    z-index: -1;
+}
+
+@keyframes coffee {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: calc(100% - 7px);
+    }
+
+}

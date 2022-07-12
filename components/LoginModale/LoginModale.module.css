@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    gap:15px;
+    flex-direction: column;
+}
+
+.label {
+    font-size: .95em;
+}
+
+.label[data-alert="true"] {
+
+    color: var(--color-chevron)
+}

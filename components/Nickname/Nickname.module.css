@@ -1,0 +1,4 @@
+.nickname {
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+}

@@ -1,0 +1,36 @@
+.container {
+  padding: 0 15px 10px;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.scaleContainer {
+  position: relative;
+  height: 100%;
+}
+
+.scale {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+}
+
+.scaleName {
+  display: inline-block;
+}
+
+.scaleName::first-letter {
+  text-transform: uppercase;
+}

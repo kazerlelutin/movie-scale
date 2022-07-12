@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  gap: 5px;
+  text-align: center;
+}
+
+.container button {
+  padding: 7px;
+}
+
+.connect {
+  background: none;
+  border: none;
+  color: var(--color-chevron);
+}
+
+.connect:hover {
+  background: none;
+  border: none;
+  box-shadow: none;
+}

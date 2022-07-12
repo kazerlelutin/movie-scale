@@ -1,0 +1,14 @@
+
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 10px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 7px;
+    align-items: center;
+}

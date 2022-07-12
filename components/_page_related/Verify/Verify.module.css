@@ -1,0 +1,17 @@
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.text {
+    margin: 20px;
+    text-align: center;
+    border: 1px solid var(--color-mug);
+    background: var(--color-round-alt);
+    padding: 10px;
+}

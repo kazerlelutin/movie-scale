@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.level {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    background: rgba(0, 0, 0, .2);
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid rgba(0, 0, 0, .2);
+    transition: 200ms ease-in-out;
+}
+
+.level[data-drophover='true']{
+    border: 2px dashed rgba(255,255,255, .2);
+}
+
+
+.movie {
+    font-size: .5rem;
+    cursor: grab;
+    transition: 200ms ease-in-out;
+}
+
+.movie:hover {
+    transform: scale(.95);
+}

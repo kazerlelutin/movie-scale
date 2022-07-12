@@ -1,0 +1,54 @@
+.container {
+    --addmedia-width: 75px;
+    border: 1px solid var(--color-txt);
+    width: var(--addmedia-width);
+    height: calc(var(--addmedia-width) * 1.33);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    transition: 200ms ease-in-out;
+    cursor: pointer;
+}
+
+.container:hover {
+    border: 1px solid var(--color-chevron);
+    background: rgba(0, 0, 0, .2);
+}
+
+.cross {
+    position: relative;
+    --addmedia-cross-size: 10px;
+    width: var(--addmedia-cross-size);
+    height: var(--addmedia-cross-size); 
+    transition: 200ms ease-in-out;
+}
+
+
+.cross:after,
+.cross::before {
+    position: absolute;
+    content:'';
+    left: 0;
+    right: 0;
+    top: calc(50% - 1px);
+    height: 2px;
+    background: var(--color-txt);
+    border-radius: 5px;
+    transition: 200ms ease-in-out;
+}
+
+.cross:after {
+    transform: rotate(90deg);
+}
+
+.container:hover .cross {
+    --addmedia-cross-size: 15px;
+}
+
+
+.container:hover .cross:before,
+.container:hover .cross:after {
+    background: var(--color-chevron);
+}

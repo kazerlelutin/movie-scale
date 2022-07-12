@@ -1,16 +1,303 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;1,100;1,200;1,600;1,700&display=swap");
+:root {
+  --color-chevron: #dd5fbe;
+  --color-mug: #0092d2;
+  --color-coffee: #af5a25;
+  --color-round: #141212;
+  --color-round-alt: #0c0b0b;
+  --color-txt: rgb(165, 164, 164);
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-alert: #f53d3d;
 }
 
 * {
   box-sizing: border-box;
+  scrollbar-color: var(--color-mug) var(--color-round);
+  scrollbar-width: thin;
 }
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  color: var(--color-txt);
+  font-family: "Roboto Mono", monospace;
+  background: var(--color-round);
+}
+
+a {
+  color: var(--color-chevron);
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-round);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-mug);
+  transition: 200ms ease-in-out;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
+  color: rgb(211, 211, 211);
+}
+
+input {
+  outline: none;
+  border: none;
+  padding: 10px;
+  color: var(--color-coffee);
+  background: rgb(26, 26, 26);
+  font-size: 1em;
+  border-bottom: 1px solid var(--color-coffee);
+  transition: 200ms ease-in-out;
+}
+
+input:focus {
+  border-bottom: 1px solid var(--color-chevron);
+}
+
+input::placeholder {
+  font-style: italic;
+  opacity: 0.7;
+}
+
+textarea {
+  outline: none;
+  border: none;
+  padding: 10px;
+  color: var(--color-coffee);
+  background: rgb(8, 8, 8);
+  font-size: 1.2em;
+  border: 1px solid rgb(66, 66, 66);
+  transition: 200ms ease-in-out;
+  resize: none;
+}
+
+.hidden {
+  display: none;
+}
+
+textarea:focus {
+  border: 1px solid var(--color-coffee);
+}
+
+button,
+.button {
+  outline: none;
+  border: none;
+  font-family: "Roboto Mono", monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  padding: 10px;
+  color: #5ae9ff;
+  border-radius: 5px;
+  border: 1px solid #041b27;
+  box-shadow: 0 0 5px #02131b;
+  background: black;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+}
+
+button:hover,
+.button:hover {
+  color: white;
+  border-radius: 0;
+  border: 1px solid transparent;
+  box-shadow: 0 0 5px rgba(100, 100, 100, 5);
+  background: var(--color-mug);
+}
+
+.button a {
+  color: white;
+}
+
+button:disabled {
+  opacity: 0.4;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.15rem;
+  color: var(--color-mug);
+  padding: 10px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.title:after,
+.title:before {
+  color: var(--color-chevron);
+  padding: 0 5px;
+}
+
+.title:before {
+  content: "<";
+}
+
+.title:after {
+  content: "/>";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h2 {
+  color: var(--color-mug);
+  margin: 0;
+  font-weight: normal;
+  font-size: 1.1rem;
+  padding-bottom: 10px;
+}
+
+h2::before {
+  content: "//";
+  opacity: 0.8;
+}
+
+.tag {
+  font-style: italic;
+  color: var(--color-coffee);
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+}
+
+.tag::before {
+  content: "#";
+}
+
+.tag:hover {
+  color: white;
+}
+
+.cross {
+  --cross-size: 20px;
+  width: var(--cross-size);
+  height: var(--cross-size);
+  position: relative;
+  cursor: pointer;
+}
+
+.cross:before,
+.cross:after {
+  content: "";
+  position: absolute;
+  top: calc(50% + 1px);
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-mug);
+  transition: 200ms ease-in-out;
+}
+
+.cross:before {
+  transform: rotate(45deg);
+}
+
+.cross:after {
+  transform: rotate(-45deg);
+}
+
+.cross:hover:before {
+  transform: rotate(225deg);
+}
+
+.cross:hover:after {
+  transform: rotate(135deg);
+}
+
+.description {
+  text-align: center;
+  font-style: italic;
+  font-size: 0.8em;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-enter-active {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+}
+
+.fade-enter-active, .fade-exit-active {
+  transition: opacity 200ms;
+}
+
+.alert-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.alert-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.alert-exit {
+  opacity: 1;
+}
+
+.alert-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.toast-enter {
+  opacity: 0;
+  transform: translateX(100%);
+ 
+}
+
+.toast-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.toast-exit {
+  opacity: 1;
+}
+
+.toast-exit-active {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 300ms, transform 300ms;
+}
+
+
