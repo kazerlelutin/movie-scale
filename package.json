@@ -4,7 +4,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.3",
@@ -22,6 +23,7 @@
     "react-transition-group": "^4.4.2"
   },
   "devDependencies": {
+    "@playwright/test": "^1.23.2",
     "@types/node": "^17.0.36",
     "@types/react": "18.0.1",
     "eslint": "8.12.0",
