@@ -1,3 +1,9 @@
+.box {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+}
+
 .container {
   --trash-size-width: 35px;
   --trash-size-height: 50px;
@@ -80,19 +86,23 @@
   background: rgba(0, 0, 0, 0.3);
 }
 
-.container:hover .trash {
+.container:hover .trash,
+.container[data-drag-hover="true"] .trash {
   animation: anime-trash 600ms ease-in-out;
 }
 
-.container:hover .trash:before {
+.container:hover .trash:before,
+.container[data-drag-hover="true"] .trash:before {
   animation: anime-trash-shadow 600ms ease-in-out forwards;
 }
 
-.container:hover .lid {
+.container:hover .lid,
+.container[data-drag-hover="true"] .lid {
   animation: anime-lid 400ms ease-in-out forwards;
 }
 
-.container:hover .wrist {
+.container:hover .wrist,
+.container[data-drag-hover="true"] .wrist {
   animation: anime-wrist 400ms ease-in-out forwards;
 }
 

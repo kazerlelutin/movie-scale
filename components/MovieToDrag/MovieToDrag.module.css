@@ -1,0 +1,10 @@
+.movie {
+    font-size: .5rem;
+    cursor: grab;
+    transition: 200ms ease-in-out;
+    position: relative;
+}
+
+.movie:hover {
+    transform: scale(.95);
+}

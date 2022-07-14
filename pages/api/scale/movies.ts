@@ -23,6 +23,9 @@ export default async function getScaleMovies(  req: NextApiRequest,
       select: {
         position:true
       },
+      orderBy:{
+        position: 'desc'
+      },
       distinct:['position']
     })
 
