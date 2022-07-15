@@ -8,13 +8,14 @@ import LoginButton from "../LoginButton/LoginButton";
 import { useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import KofiButton from "../_ui/KofiButton/KofiButton";
 
 interface props {
-  readonly children: any
-  readonly ogBalise: any
+  readonly children: any;
+  readonly ogBalise: any;
 }
 
-export default function Layout({ children,ogBalise }:props) {
+export default function Layout({ children, ogBalise }: props) {
   const { data: session } = useSession(),
     { pathname } = useRouter();
 
@@ -27,23 +28,32 @@ export default function Layout({ children,ogBalise }:props) {
 
   return (
     <>
-    {ogBalise()}
-    <div className={classes.container}>
-      <header className={classes.header}>
-      <Link href={"/"} passHref>
-        <Image src={Logo} width={50} height={29} alt="logo" className={classes.logo}/>
-        </Link>
-        <div className={classes.actions}>
-          {session && (
-            <Link href={"/my-scales"} passHref>
-              <a aria-current={pathname === "/my-scales"}>Mes échelles</a>
+      {ogBalise()}
+      <div className={classes.container}>
+        <header className={classes.header}>
+          <div className={classes.actions}>
+            <Link href={"/"} passHref>
+              <Image
+                src={Logo}
+                width={50}
+                height={29}
+                alt="logo"
+                className={classes.logo}
+              />
             </Link>
-          )}
-          {session ? <Nickname /> : <LoginButton />}
-        </div>
-      </header>
-      <main>{children}</main>
-    </div>
+            <KofiButton />
+          </div>
+          <div className={classes.actions}>
+            {session && (
+              <Link href={"/my-scales"} passHref>
+                <a aria-current={pathname === "/my-scales"}>Mes échelles</a>
+              </Link>
+            )}
+            {session ? <Nickname /> : <LoginButton />}
+          </div>
+        </header>
+        <main className={classes.main}>{children}</main>
+      </div>
     </>
   );
 }
