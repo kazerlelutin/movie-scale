@@ -27,8 +27,7 @@ export default function Layout({ children,ogBalise }:props) {
 
   return (
     <>
-     {ogBalise()}
- 
+    {ogBalise()}
     <div className={classes.container}>
       <Head>
         <title>Movie Scale</title>
