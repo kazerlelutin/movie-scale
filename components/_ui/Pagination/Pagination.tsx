@@ -14,5 +14,5 @@ export default function Pagination({ onTrigger }) {
     }
   }, [inView]);
 
-  return <div className={classes.container} ref={ref} />;
+  return <div className={classes.container} ref={ref} >lk</div>;
 }

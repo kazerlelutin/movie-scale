@@ -2,17 +2,16 @@
 import { User } from "../../types/User.interface";
 import classes from "./UserModale.module.css";
 import { useEffect, useRef } from "react";
-import clickOutside from "../../utils/clickOutside";
 import { signOut, useSession } from "next-auth/react";
-import getNickname from "../../utils/getNickname";
+
+import NicknameInput from "../NicknameInput/NicknameInput";
 
 interface props {
   readonly user: User;
-  readonly setShow: Function;
   readonly parentRef: any;
 }
 
-export default function UserModale({ setShow, user, parentRef }: props) {
+export default function UserModale({ user, parentRef }: props) {
   const ref = useRef(null),
     { data: session } = useSession();
 
@@ -24,7 +23,7 @@ export default function UserModale({ setShow, user, parentRef }: props) {
 
   return (
     <div className={classes.container} ref={ref}>
-      <div className={classes.nickname}>{getNickname(session)}</div>
+      <div className={classes.nickname}><NicknameInput/></div>
       <div className={classes.email}>{user.email}</div>
 
       <div className={classes.deco} onClick={() => signOut()}>

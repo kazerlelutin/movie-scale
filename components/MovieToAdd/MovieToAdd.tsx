@@ -17,14 +17,14 @@ export default function MovieToAdd({
   position,
   scaleId,
   onClose,
-  addMovie
+  addMovie,
 }: props) {
   const { loading, data, api } = useLazyFetch("/scale/addMovie");
 
   useEffect(() => {
-    if (data){
-        onClose();
-        addMovie(data)
+    if (data) {
+      onClose();
+      addMovie(data);
     }
   }, [data]);
 

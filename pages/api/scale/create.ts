@@ -13,9 +13,10 @@ export default async function createScale(
       where: { userId: session.user.id },
     }),
     name = `mon echelle (${count + 1})`,
+    isExist= await prisma.scalemovie.findFirst({where: { userId: session.user.id,name }}),
     newScale = await prisma.scalemovie.create({
       data: {
-        name,
+        name: isExist ? `mon echelle (${count + 2})`:name,
         user: {
           connect: {
             id: session.user.id,

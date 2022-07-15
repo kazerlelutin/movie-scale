@@ -27,10 +27,8 @@
   overflow-y: auto;
 }
 
-.scaleName {
-  display: inline-block;
-}
-
-.scaleName::first-letter {
-  text-transform: uppercase;
+.details {
+  display: flex;
+  gap: 15px;
+  align-items: center;
 }

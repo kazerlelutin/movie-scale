@@ -3,7 +3,10 @@ import { useState } from 'react';
 
 export default function useLazyFetch(url: string) {
   const [data, setData] = useState<any>(),
-    [error, setError] = useState<string>(),
+    [error, setError] = useState<{response:{
+      status:number,
+      data: string
+    }}>(),
     [loading, setLoading] = useState<boolean>(false);
 
   async function handleFetch(body: object) {

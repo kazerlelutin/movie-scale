@@ -3,7 +3,11 @@ import Layout from "../../_layouts/Layout";
 import Scale from "../../Scale/Scale";
 import useLevels from "../../../hooks/useLevels";
 import MovieCount from "../../MovieCount/MovieCount";
-import Trash from "../../_ui/Trash/Trash";
+import TrashForMovie from "../../TrashForMovie/TrashForMovie";
+import TitleScale from "../../TitleScale/TitleScale";
+import StarOnScale from "../../StarOnScale/StarOnScale";
+import OgBalise from "../../OgBalise/OgBalise";
+import getNickname from "../../../utils/getNickname";
 
 interface props {
   readonly name: string;
@@ -13,17 +17,26 @@ interface props {
 }
 
 export default function ScalePage({ name, author, id, ownerId }: props) {
-  const { levels, addMovie, createLevel,removeMovie } = useLevels();
+  const { levels, addMovie, createLevel, removeMovie } = useLevels();
 
   return (
-    <Layout>
+    <Layout
+      ogBalise={() => (
+        <OgBalise
+          description={`Consutez ce classment de films`}
+          title={`${name} - ${author}`}
+        />
+      )}
+    >
       <div className={classes.container}>
         <div className={classes.title}>
-          <h1 className="title">
-            <div className={classes.scaleName}>{name}</div>
-          </h1>
+          <TitleScale scaleId={id} name={name} ownerId={ownerId} />
           <h2>{author}</h2>
-          <MovieCount levels={levels} />
+          <div className={classes.details}>
+            <MovieCount levels={levels} />
+            <div className={classes.separate}>{"-"}</div>
+            <StarOnScale scaleId={id} />
+          </div>
         </div>
         <div className={classes.scaleContainer}>
           <div className={classes.scale} id="scale">
@@ -36,7 +49,7 @@ export default function ScalePage({ name, author, id, ownerId }: props) {
             />
           </div>
         </div>
-        <Trash removeMovie={removeMovie} scaleId={id}/>
+        <TrashForMovie removeMovie={removeMovie} scaleId={id} />
       </div>
     </Layout>
   );

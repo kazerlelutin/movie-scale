@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.name {
+  display: inline-block;
+}
+
+.name::first-letter {
+  text-transform: uppercase;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+}
+
+.error {
+  color: var(--color-alert);
+  font-style: italic;
+  text-align: center;
+}

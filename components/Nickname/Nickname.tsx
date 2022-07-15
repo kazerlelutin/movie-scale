@@ -35,7 +35,6 @@ export default function Nickname() {
           mountOnEnter
         >
           <UserModale
-            setShow={handleClose}
             user={session.user}
             parentRef={ref}
           />

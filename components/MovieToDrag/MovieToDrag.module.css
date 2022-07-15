@@ -1,10 +1,15 @@
 .movie {
-    font-size: .5rem;
-    cursor: grab;
-    transition: 200ms ease-in-out;
-    position: relative;
+  font-size: 0.5rem;
+  cursor: grab;
+  transition: 200ms ease-in-out;
+  position: relative;
 }
 
 .movie:hover {
-    transform: scale(.95);
+  transform: scale(0.95);
+}
+
+.movie[data-isdragging="true"] {
+  opacity: 0.5;
+  filter: grayscale(100%);
 }

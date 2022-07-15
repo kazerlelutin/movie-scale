@@ -3,6 +3,7 @@
     display: grid;
     grid-template-rows: auto 1fr;
     padding: 15px;
+    gap: 20px;
 }
 
 .header {

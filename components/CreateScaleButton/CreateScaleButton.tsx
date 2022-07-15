@@ -23,11 +23,10 @@ export default function CreateScaleButton() {
 
   useEffect(() => {
     if (data) {
-    router.push("/scale/" + data);
+      router.push("/scale/" + data);
     }
   }, [data]);
 
-  console.log(data);
   return (
     <>
       {loading ? (

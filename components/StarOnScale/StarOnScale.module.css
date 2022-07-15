@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.count {
+    font-size: 1.2rem;
+}
+
+.star {
+    padding-top: 2px;
+    cursor: pointer;
+}

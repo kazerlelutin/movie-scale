@@ -18,9 +18,10 @@ export default function TouchPosterToMove({ movie, touchPosition }: props) {
     if (touchPosition) {
       const scale = document.getElementById("scale"),
         partOfScreen = (touchPosition.y / window.innerHeight) * 100;
-      if (partOfScreen < 30 && partOfScreen < 70) {
+
+      if (partOfScreen > 30 && partOfScreen < 70) {
         scale.scrollTo({
-          top: partOfScreen < 50 ? scale.scrollTop - 40 : scale.scrollTop + 40,
+          top: partOfScreen < 50 ? scale.scrollTop - 40 : scale.scrollTop + 100,
           behavior: "smooth",
         });
       }
