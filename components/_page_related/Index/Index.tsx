@@ -1,11 +1,12 @@
 import CreateScaleButton from "../../CreateScaleButton/CreateScaleButton";
+import OgBalise from "../../OgBalise/OgBalise";
 import PopularScales from "../../PopularScales/PopularScales";
 import Layout from "../../_layouts/Layout";
 import classes from "./Index.module.css";
 
 export default function Index() {
   return (
-    <Layout>
+    <Layout ogBalise={()=><OgBalise/> }>
       <div className={classes.container}>
         <header className={classes.header}>
           <CreateScaleButton />
