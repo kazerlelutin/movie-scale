@@ -1,0 +1,144 @@
+.container {
+  --trash-size-width: 35px;
+  --trash-size-height: 50px;
+  --trash-margin: 7%;
+  --trash-color: #8a2f2f;
+  width: var(--trash-size-width);
+  height: var(--trash-size-height);
+  position: relative;
+  cursor: pointer;
+}
+
+.lid {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(var(--trash-size-height) - 80%);
+  height: 20%;
+  background: var(--trash-color);
+  border-radius: 6px 6px 0 0;
+  overflow: hidden;
+}
+
+.lid:after {
+  content: "";
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  left: 0;
+  right: 15%;
+  top: -20%;
+  bottom: 0;
+  border-radius: 0 60px 30px 0;
+}
+
+.wrist {
+  content: "";
+  position: absolute;
+  background: var(--trash-color);
+  left: 25%;
+  right: 25%;
+  top: 10%;
+  height: 20%;
+  border-radius: 5px 5px 0 0;
+}
+
+.trash {
+  position: absolute;
+  bottom: 0;
+  left: var(--trash-margin);
+  right: var(--trash-margin);
+  top: calc(var(--trash-size-height) - 65%);
+  background: var(--trash-color);
+  border-radius: 0 0 5px 5px;
+  overflow: hidden;
+  transform-origin: bottom;
+}
+
+.trash:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 15%;
+  background: rgba(0, 0, 0, 0.7);
+  transform: rotate(3deg) scale(1.5);
+}
+
+.containerBar {
+  height: 75%;
+  margin: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.bar {
+  width: calc(var(--trash-size-width) / 10);
+  height: 100%;
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.container:hover .trash,
+.container[data-drag-hover="true"] .trash {
+  animation: anime-trash 600ms ease-in-out;
+}
+
+.container:hover .trash:before,
+.container[data-drag-hover="true"] .trash:before {
+  animation: anime-trash-shadow 600ms ease-in-out forwards;
+}
+
+.container:hover .lid,
+.container[data-drag-hover="true"] .lid {
+  animation: anime-lid 400ms ease-in-out forwards;
+}
+
+.container:hover .wrist,
+.container[data-drag-hover="true"] .wrist {
+  animation: anime-wrist 400ms ease-in-out forwards;
+}
+
+@keyframes anime-trash {
+  50% {
+    transform: scaleY(0.9) scaleX(1.1);
+  }
+}
+
+@keyframes anime-trash-shadow {
+  100% {
+    top: -50%;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes anime-lid {
+  75% {
+    transform: rotate(35deg) translateX(10%);
+  }
+
+  85% {
+    transform: rotate(20deg) scaleY(1.1) translateX(12%);
+  }
+
+  100% {
+    top: -12%;
+    transform: rotate(25deg) translateX(10%);
+  }
+}
+
+@keyframes anime-wrist {
+  75% {
+    transform: rotate(35deg) translateX(25%);
+  }
+
+  85% {
+    transform: rotate(20deg) scaleY(1.1) translateX(35%);
+  }
+
+  100% {
+    top: -20%;
+    transform: rotate(25deg) translateX(30%);
+  }
+}

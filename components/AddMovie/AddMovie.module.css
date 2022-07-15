@@ -1,0 +1,38 @@
+.container {
+  height: calc(80vh - 120px);
+  width: 500px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.containerMovies {
+  position: relative;
+  height: 100%;
+}
+
+.movies {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  height: 100%;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+@media screen and (max-width: 550px) {
+  .container {
+    width: 100%;
+  }
+
+  .movies {
+    display: flex;
+    flex-direction: column;
+  }
+}

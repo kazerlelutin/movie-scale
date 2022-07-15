@@ -1,0 +1,34 @@
+.container {
+  position: relative;
+  transition: 200ms ease-in-out;
+  cursor: pointer;
+}
+
+.title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5px;
+  color: var(--color-chevron);
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.9);
+  transition: 200ms ease-in-out;
+  text-align: center;
+}
+
+.container:hover {
+  box-shadow: 10px 10px 0 black;
+}
+
+.img {
+  transition: 300ms ease-in-out;
+}
+
+.container:hover .img {
+  transform: rotate(-2deg) scale(1.1);
+}
+
+.container:hover .title {
+  padding: 5px 5px 20px;
+}

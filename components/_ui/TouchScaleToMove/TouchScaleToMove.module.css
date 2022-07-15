@@ -1,0 +1,15 @@
+.container {
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.8);
+  position: fixed;
+  opacity: 0.8;
+  z-index: 100;
+  background: var(--color-round-alt);
+  padding: 5px;
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+}
+
+.title {
+  font-size: .8rem;
+  color: var(--color-mug)
+}

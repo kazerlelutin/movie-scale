@@ -1,0 +1,48 @@
+.container {
+  border: 1px solid var(--color-border);
+  padding: 10px;
+  flex-basis: 260px;
+  background: var(--color-round-alt);
+  border-radius: 5px;
+  transition: 200ms ease-in-out;
+  cursor: grab;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.container[data-isdragging="true"] {
+  opacity: 0.5;
+}
+
+.container:hover {
+  box-shadow: 10px 10px 0 black;
+}
+.favorite {
+  display: flex;
+  gap: 5px;
+  justify-items: center;
+  justify-content: flex-end;
+}
+
+.count {
+  color: var(--color-chevron);
+  font-size: 1.5rem;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--color-mug);
+  font-weight: bold;
+  transition: 200ms ease-in-out;
+}
+
+.title:hover {
+  color: var(--color-chevron);
+}
+
+.movies {
+  text-align: center;
+  color: var(--color-coffee);
+}

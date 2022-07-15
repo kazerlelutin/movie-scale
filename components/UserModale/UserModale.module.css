@@ -1,0 +1,39 @@
+.container {
+  position: fixed;
+  right: 12px;
+  background: var(--color-round-alt);
+  border: 1px solid var(--color-mug);
+  padding: 20px 35px;
+  border-radius: 10px;
+  max-width: 400px;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  z-index: 3;
+}
+
+.email {
+  font-size: 0.8em;
+  opacity: 0.8;
+}
+
+.deco {
+  color: var(--color-link);
+  transition: 200ms ease-in-out;
+  cursor: pointer;
+}
+
+.deco:hover {
+  color: white;
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    right: 20px;
+    left: 20px;
+    max-width: inherit;
+  }
+}
