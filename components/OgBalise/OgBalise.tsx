@@ -48,12 +48,12 @@ export default function OgBalise({ img, description, title }: props) {
         property="og:title"
         content={title ? `${title} | ` + baseTitle : baseTitle}
       />
-      <meta property="og:image" content={img || `${baseUrl}fb.jpg`} />
+      <meta property="og:image" content={img || `${baseUrl}fb.png`} />
       <meta
         property="og:url"
         content={`${baseUrl}${router.asPath !== "/" ? router.asPath : ""}`}
       />
-      <meta property="og:image:type" content="image/jpg" />
+      <meta property="og:image:type" content="image/png" />
       <meta property="og:image:alt" content={title} />
       <meta property="og:type" content="article" />
       <meta
@@ -76,7 +76,7 @@ export default function OgBalise({ img, description, title }: props) {
           defaultDescription
         }
       />
-      <meta name="twitter:image" content={img || `${baseUrl}fb.jpg`} />
+      <meta name="twitter:image" content={img || `${baseUrl}fb.png`} />
       <meta name="twitter:url" content={`${baseUrl}${router.asPath}`} />
     </Head>
   );
