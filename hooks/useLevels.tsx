@@ -72,8 +72,10 @@ export default function useLevels(): returns {
     );
   }
 
-  function removeMovie(levelsClean:Array<Level>){
-    setLevels(levelsClean);
+  function removeMovie(levelsClean: Array<Level>) {
+    setLevels(
+      levelsClean.filter((lvl) => lvl.movies.length > 0 || lvl.peripheral)
+    );
   }
 
   function createLevel(data: {
@@ -109,6 +111,6 @@ export default function useLevels(): returns {
     levels,
     addMovie,
     createLevel,
-    removeMovie
+    removeMovie,
   };
 }

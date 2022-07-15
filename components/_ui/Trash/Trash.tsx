@@ -11,7 +11,7 @@ interface props {
   readonly removeMovie: Function;
 }
 
-export default function Trash({ removeMovie, scaleId }:props) {
+export default function Trash({ removeMovie, scaleId }: props) {
   const { loading, api } = useLazyFetch("/scale/removeMovie"),
     [{ isOver, highlighted }, drop] = useDrop(() => ({
       accept: "BOX",
