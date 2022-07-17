@@ -3,6 +3,7 @@ import OgBalise from "../../OgBalise/OgBalise";
 import PopularScales from "../../PopularScales/PopularScales";
 import Layout from "../../_layouts/Layout";
 import classes from "./Index.module.css";
+import Link from 'next/link';
 
 export default function Index() {
   return (
@@ -19,6 +20,10 @@ export default function Index() {
           <div className="title">Les échelles populaires</div>
           <PopularScales />
         </section>
+        <footer className={classes.links}>
+          <Link href={'/about'}>{"A propos"}</Link>
+          <Link href={'/legal'}>{"Mentions légales"}</Link>
+        </footer>
       </div>
     </Layout>
   );
