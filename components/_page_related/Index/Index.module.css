@@ -12,3 +12,10 @@
     gap: 20px;
     align-items: center;
 }
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: .9rem;
+}

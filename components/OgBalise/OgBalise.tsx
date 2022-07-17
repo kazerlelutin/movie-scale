@@ -1,5 +1,8 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { useState, useEffect } from 'react';
+import { typeOfConsent } from "../../types/typeOfConsent.interface";
+import Consent from "../Consent/Consent";
 
 interface props {
   readonly img?: string;
@@ -7,11 +10,25 @@ interface props {
   readonly description?: string;
 }
 
+const CONSENT = "movie_scale_kll_CONSENT"
+
 export default function OgBalise({ img, description, title }: props) {
-  const router = useRouter(),
+  const  [consent, setConsent] = useState<typeOfConsent>(),
+  router = useRouter(),
     baseUrl = "https://movie-scale.kazerlelutin.space/",
     baseTitle = "🎞 Movie Scale 🪜",
-    defaultDescription = "Créez vos échelles pour classer les films préférés (ou pas) !"
+    defaultDescription =
+      "Créez vos échelles pour classer les films préférés (ou pas) !";
+
+      useEffect(() => {
+        const ls: any | undefined = localStorage.getItem(CONSENT);
+        setConsent(ls || typeOfConsent.FIRST_SEEN);
+      }, []);
+    
+      function handleAccept(consentType:typeOfConsent) {
+        localStorage.setItem(CONSENT, consentType);
+        setConsent(consentType)
+      }
 
   function matomo() {
     return {
@@ -34,9 +51,9 @@ export default function OgBalise({ img, description, title }: props) {
     };
   }
 
-  return (
+  return <>
     <Head>
-      <script dangerouslySetInnerHTML={matomo()} />
+      {consent === typeOfConsent.CONSENT && <script dangerouslySetInnerHTML={matomo()} />}
       <title>
         {title && `${title} | `} {baseTitle}
       </title>
@@ -55,10 +72,7 @@ export default function OgBalise({ img, description, title }: props) {
       <meta property="og:type" content="article" />
       <meta
         property="og:description"
-        content={
-          description ||
-          defaultDescription
-        }
+        content={description || defaultDescription}
       />
       <meta name="twitter:card" content="photo" />
       <meta name="twitter:site" content={baseUrl} />
@@ -68,13 +82,11 @@ export default function OgBalise({ img, description, title }: props) {
       />
       <meta
         name="twitter:description"
-        content={
-          description ||
-          defaultDescription
-        }
+        content={description || defaultDescription}
       />
       <meta name="twitter:image" content={img || `${baseUrl}fb.png`} />
       <meta name="twitter:url" content={`${baseUrl}${router.asPath}`} />
     </Head>
-  );
+    {!consent || consent === typeOfConsent.FIRST_SEEN && <Consent setter={handleAccept} />}
+  </>
 }

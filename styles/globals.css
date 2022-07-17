@@ -29,9 +29,14 @@ body {
 a {
   color: var(--color-chevron);
   text-decoration: none;
+  transition: 200ms ease-in-out;
 }
 
-a[aria-current="true"]{
+a:hover {
+  color: var(--color-mug);
+}
+
+a[aria-current="true"] {
   color: var(--color-coffee);
 }
 
@@ -257,7 +262,8 @@ h2::before {
   opacity: 0;
 }
 
-.fade-enter-active, .fade-exit-active {
+.fade-enter-active,
+.fade-exit-active {
   transition: opacity 200ms;
 }
 
@@ -285,7 +291,6 @@ h2::before {
 .toast-enter {
   opacity: 0;
   transform: translateX(100%);
- 
 }
 
 .toast-enter-active {
@@ -303,5 +308,3 @@ h2::before {
   transform: translateX(100%);
   transition: opacity 300ms, transform 300ms;
 }
-
-

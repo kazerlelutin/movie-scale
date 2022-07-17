@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Consent /> Check snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+  >
+    <header
+      class="header"
+    >
+      <a
+        class="title"
+        href="/"
+      >
+        f() 
+        <span
+          class="store"
+        >
+          Store
+        </span>
+      </a>
+    </header>
+    <main
+      class="main"
+    >
+      <section
+        class="container"
+      >
+        <div
+          class="title"
+        >
+          Nous utilisons des cookies
+        </div>
+        <div
+          class="desc"
+        >
+          Il est impossible d'utiliser le f() Store sans cookie, en voici les raisons:
+        </div>
+        <article
+          class="article"
+        >
+          <div
+            class="subtitle"
+          >
+            Pour la base de données
+          </div>
+          <p>
+            Nous proposons un service sans base de données distantes.
+          </p>
+          <p>
+            Toutes les informations que vous saisissez sont stockées sur votre navigateur.
+          </p>
+          <p>
+            Aucune de ses informations sont enregistrées autrement.
+          </p>
+          <p>
+            De cette façon, vous accédez aux outils sans avoir besoin de créer un compte.
+          </p>
+          <p>
+            Aucune information personnelle n'est demandée, sauf si vous voulez utilisez une fonction qui requiert l'autorisation d'un tiers (connexion à Instagram par exemple)
+          </p>
+        </article>
+        <article
+          class="article"
+        >
+          <div
+            class="subtitle"
+          >
+            Pour les statistiques
+          </div>
+          <p>
+            Nous enregistrons les données de navigation.
+          </p>
+          <p>
+            Pour suivre le trafic de l'application, nous utilisons 
+            <a
+              href="http://www.openwebanalytics.com/"
+              target="_blank"
+            >
+              Open Web Analytics
+            </a>
+            .
+          </p>
+          <p>
+            Ces données sont anonymes et nous hébergeons sur nos serveur, notre propre instance Open Web Analytics.
+          </p>
+        </article>
+        <article
+          class="article"
+        >
+          <div
+            class="subtitle"
+          >
+            Vous avez le choix
+          </div>
+          <div
+            class="buttons"
+          >
+            <div>
+              Quittez le F() store
+            </div>
+            <button>
+              Accepter les cookies
+            </button>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+</DocumentFragment>
+`;
